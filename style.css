@@ -64,10 +64,19 @@ body{
     height: 1px;
     background: linear-gradient(
       270deg,
-      hsla(var(--hue), 36%, 57%, 1) 0%,
-      hsla(var(--hue), 65%, 88%, 0.34) 100%
+      hsla(var(--hue), 36%, 57%, 1),
+      hsla(var(--hue), 65%, 88%, 0.34)
     );
 }
+.divider-2 {
+    height: 1px;
+    background: linear-gradient(
+      270deg,
+      hsla(var(--hue), 65%, 88%, 0.34),
+      hsla(var(--hue), 36%, 57%, 1)
+    );
+}
+
 
 /* ------------------------LAYOUT--------------------------- */
 
@@ -85,7 +94,15 @@ gap: 2rem;
 .section {
     padding: 5rem 0;
 }
-
+section .title {
+    margin-bottom: 1rem;
+}
+.section header {
+    margin-bottom: 4rem;
+}
+.section header strong {
+    color: var(--base-color);
+}
 #header {
     border-bottom: 1px solid #e4e4e4;
     margin-bottom: 2rem;
@@ -170,6 +187,19 @@ nav.show .menu{
 nav.show ul.grid {
     gap: 4rem
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.card .icon {
+    width: 5rem;
+    height: 5rem;
+}
 /* -------------Toggle Menu---------------- */
 .toggle {
 color: var(--base-color);
@@ -236,3 +266,40 @@ nav.show .icon-close {
     margin-bottom: 2rem;
   }
   
+  /* -------------------------- ABOUT ------------------------- */
+
+#about{
+    background-color:white;
+}
+#about .container {
+    margin: 0;
+}
+/* Criando um elemento fantasma */
+#about .image{
+    position: relative;
+}
+#about .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -8.3%;
+    left: -33%;
+    z-index: 0;
+}
+
+#about .image img {
+ position: relative;
+
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
