@@ -26,3 +26,16 @@ window.addEventListener('scroll', ()=> {
     header.classList.remove('scroll');
     }
 })
+
+// testimonials carousel slider swiper
+
+
+
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    pagination: {
+        el: ".swiper-pagination"
+    },
+    mousewheel: true,
+    keyboard: true,
+  });

@@ -46,7 +46,7 @@ body{
 }
 
 .title{
-    font: 700 1.875rem 'Poppins', sans-serif;
+    font: 700 1.875rem 'Poppins', sans-serif;    
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -60,6 +60,7 @@ body{
   border-radius: 0.25rem;
   font: 500 1rem 'DM Sans', sans-serif;
   transition: background 0.3s;
+  justify-content: space-between;
 }
 .button:hover{
     background-color: var(--base-color-alt);
@@ -85,7 +86,7 @@ body{
 /* ------------------------LAYOUT--------------------------- */
 
 .container {
-    /* 24 pixels vezes 16px (padrão de tamanho do html) = 1.5 rem */
+  position: relative;    /* 24 pixels vezes 16px (padrão de tamanho do html) = 1.5 rem */
    margin-left: 1.5rem;
    margin-right: 1.5rem;
 }
@@ -316,22 +317,119 @@ nav.show .icon-close {
 
 /* ----------SERVICES--------------------- */
 .cards.grid{
-    gap: 1.5rem;
+  gap: 1.5rem;
 }
 .card {
-    padding : 3.65rem 2rem;
-    box-shadow:  0px 0px 12px rgba(0, 0, 0, 0.08);
-    border-bottom: 0.25rem solid var(--base-color);
-    border-radius: 0.25rem 0.25rem 0 0;
-    text-align: center;
+  padding : 3.65rem 2rem;
+  box-shadow:  0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
 }
 .card i{
-    display: block;
-    margin-bottom: 1.25rem;
-    font-size: 5rem;
-    color: var(--base-color);
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: 5rem;
+  color: var(--base-color);
 }
 .card title {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
+/* --------- TESTIMONIALS ------------------ */
+#testimonials {
+  background: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+  position: absolute;
+  top: -0.375rem;
+  left: -1.875rem;
+  color: var(--base-color);
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5rem;
+}
+
+/* swiper */
+
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+/* CONTACT */
+
+
+
+/* #contact h2 {
+  margin-bottom: 1rem;
+}
+#contact p {
+  margin-bottom: 2rem;
+}
+#contact a {
+  width: 16rem;
+  height: 3.5rem;
+}
+.links {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.links i {
+  margin-bottom: 2rem;
+  color: var(--base-color);
+  font-size: 1.5rem;
+  align-items: center;
+  align-content: center;
+  
+}
+.links p {
+  display: inline;
+  color: var(--text-color);
+} */
