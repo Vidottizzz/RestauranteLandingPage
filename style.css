@@ -46,9 +46,10 @@ body{
 }
 
 .title{
-    font: 700 1.875rem 'Poppins', sans-serif;    
+    font: 700 1.875rem 'Architects Daughter', sans-serif;    
   color: var(--title-color);
   -webkit-font-smoothing: auto;
+  
 }
 .button {
     background-color: var(--base-color);
@@ -58,9 +59,10 @@ body{
   align-items: center;
   padding: 0 2rem;
   border-radius: 0.25rem;
-  font: 500 1rem 'DM Sans', sans-serif;
+  font: 500 1rem 'Architects Daughter', sans-serif;
   transition: background 0.3s;
   justify-content: space-between;
+  letter-spacing: 0.10rem;
 }
 .button:hover{
     background-color: var(--base-color-alt);
@@ -130,8 +132,9 @@ main{
    }
 /* --------------- LOGO ------------------ */
 .logo {
-    font: 700 1.31rem 'Poppins', sans-serif;
+    font: 700 1.31rem 'Architects Daughter', sans-serif;
     color: var(--title-color);
+    letter-spacing: 0.06rem;
 }
 .logo span{
     color: var(--base-color);
@@ -144,6 +147,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+   
 }
 
 nav ul li{
@@ -177,6 +181,7 @@ nav .menu{
     visibility: hidden;
     top:-20rem;
     transition: 0.2s;
+    
 }
 nav .menu ul {
     display: none;
@@ -204,6 +209,9 @@ nav.show .menu ul {
 
 nav.show ul.grid {
     gap: 4rem
+}
+nav.show ul li {
+  letter-spacing: 0.10rem;
 }
 
 
@@ -435,8 +443,9 @@ nav.show .icon-close {
 /* Footer */
 
 #footer h2 {
-  font: 700 1.31rem 'Poppins', sans-serif;
+  font: 700 1.31rem 'Architects Daughter', sans-serif;
     color: var(--title-color);
+    letter-spacing: 0.06rem;
 }
 #footer {
   background:var(--base-color);
@@ -453,22 +462,57 @@ nav.show .icon-close {
 #footer p {
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
+  color: --text-color-light;
   
 } 
 #footer span {
-  color: white;
+  color: var(--body-color);
+}
+#footer .title a {
+  color: inherit;
 }
 #footer ul li {
   display: inline;
   margin-right: 2.5rem;
+  cursor: pointer;
+  
 
 }
 #footer ul li i {
   width: 1.5rem;
   height: 1.5rem;
-  color: white;
+  color: var(--text-color-light);
   font-size: 2rem;
+  transition: ease-in 0.10s;
 }
 #footer .links {
   margin-bottom: 3rem;
+}
+#footer ul li i:hover {
+  color : rgb(34, 136, 252);
+}
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.8rem;
+  clip-path: circle();
+
+  font-size: 1.25rem;
+  line-height: 0;
+  
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+}
+
+.back-to-top.show {
+
+  visibility: visible;
+  opacity: 1;
 }
