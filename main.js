@@ -40,6 +40,7 @@ function changeHeaderWhenScroll() {
         767: {
             slidesPerView: 2,
             setWrapperSize: true
+            
         }
     }
   });

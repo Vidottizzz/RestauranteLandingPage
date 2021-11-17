@@ -461,6 +461,7 @@ nav.show .icon-close {
 #contact ul li i {
   color: var(--base-color);
   transition: 0.3s;
+  text-decoration: none;
 }
 #contact .links ul li a:hover {
   transform: translateY(-6px)
@@ -550,7 +551,6 @@ footer .social a:hover {
 /* Extra large devices: 1200 > */
 @media (min-width: 1200px) {
 
-
   /* reusable classes */
   .section {
     padding: 10rem 0;
@@ -636,11 +636,9 @@ footer .social a:hover {
   #about .image {
     margin: 0;  
   }
-   /* Services Resp */
-   .cards {
+  #services .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .card {
     padding-left: 3rem;
     padding-right: 3rem ;
@@ -651,7 +649,21 @@ footer .social a:hover {
     margin-right: auto;
     margin-left: auto;
   }
+  /* Contact resp */
+  #contact .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  /* ABOUT */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+  #about .image {
+    margin: 0;  
+  }
   /* footer resp */
  
   footer.section {
@@ -674,10 +686,8 @@ footer .social a:hover {
   }
   
  
-
-/* Large devices: 1023 > */
-/* Large devices: 992 > 992 pra cima*/ 
-@media (min-width: 992px) {
+/* ---------------------------Large devices: 992 > 992 pra cima*/ 
+@media (min-width: 992px){
  nav .menu {
     opacity: 1;
     visibility: visible;
@@ -701,12 +711,42 @@ footer .social a:hover {
     padding: 10rem 0;
   }
   /* Home resp */
-
-  #home .container {
+  #services header {
+    text-align: center;
+  }
+  #services .cards {
+    display: flex;
+    flex-direction: row;
+  }
+  #services .cards .card{
+    min-width: 27.75rem;
+    
+  }
+  /* -------Contact Resp------- */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+  #contact .links {
+    margin-right: 19.31rem;
+  }
+  #contact .text {
+    max-width: 25rem;
+  }
+  /* about resp */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+  #about .image {
+    margin: 0;  
+  }
+  
+  /* #home .container {
     grid-auto-flow: column;   
     justify-content: space-between;
     margin: 0 auto;
-  }
+  } */
 
   #home .image {
     order: 1;
@@ -716,12 +756,17 @@ footer .social a:hover {
     max-width: 24rem;
     text-align: left;
   }
+  /* ------Service Resp------ */
+  /* #services .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
   /* -------Contact Resp-------- */
   #contact .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+ 
 :root {
   --title-font-size: 2.25rem;
   --subtitle-font-size: 1.125rem;
@@ -746,13 +791,27 @@ footer .social a:hover {
   
     #home .image {
       order: 1;
+  
     }
     #home .text {
       order: 0;
       max-width: 24rem;
       text-align: left;
     }
-  
+    #services .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+    /* #about .image {
+      max-width: 26rem ;
+    }; */
+    #services .cards .card{
+      padding : 3.65rem var(--two-rem);
+      box-shadow:  0px 0px 12px rgba(0, 0, 0, 0.08);
+      border-bottom: 0.25rem solid var(--base-color);
+      border-radius: 0.25rem 0.25rem 0 0;
+      text-align: center;
+    }
+    
   } 
 
-/* ---------Home Resp---------- */
+
