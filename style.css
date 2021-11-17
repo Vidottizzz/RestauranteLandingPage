@@ -29,6 +29,15 @@ img {
    --text-color: hsl(0 0% 46%);
    --text-color-light: hsl(0 0% 98%);
    --body-color: hsl(0 0% 98%);
+
+   /* ----Medidas----- */
+   --title-font-size: 1.875rem;
+   --subtitle-font-size: 1rem;
+   --one-half: 1.5rem;
+   --two-rem: 2rem;
+   /*-----Fonts----*/
+   --title-font : 'Architects Daughter', sans-serif;;
+   --body-font: 'DM Sans', sans-serif;
 }
 
 
@@ -39,14 +48,14 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    font: 400 1rem 'DM Sans', sans-serif;
+    font: 400 var(--subtitle-font-size) var(--body-font);
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
 }
 
 .title{
-    font: 700 1.875rem 'Architects Daughter', sans-serif;    
+    font: 700 1.875rem var(--title-font);    
   color: var(--title-color);
   -webkit-font-smoothing: auto;
   
@@ -57,9 +66,9 @@ body{
   height: 3.5rem;
   display: inline-flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 var(--two-rem);
   border-radius: 0.25rem;
-  font: 500 1rem 'Architects Daughter', sans-serif;
+  font: 500 var(--subtitle-font-size) var(--title-font);
   transition: background 0.3s;
   justify-content: space-between;
   letter-spacing: 0.10rem;
@@ -89,20 +98,23 @@ body{
 
 .container {
   position: relative;    /* 24 pixels vezes 16px (padrão de tamanho do html) = 1.5 rem */
-   margin-left: 1.5rem;
-   margin-right: 1.5rem;
+   margin-left: var(--one-half);
+   margin-right: var(--one-half);
 }
 
 .grid{
 display: grid;
-gap: 2rem;
+gap: var(--two-rem);
 }
 
 .section {
-    padding: 5rem 0;
+    padding: calc(5rem + var(--header-height)) 0;
 }
 section .title {
-    margin-bottom: 1rem;
+    margin-bottom: var(--title-font-size);
+}
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
 }
 .section header {
     margin-bottom: 4rem;
@@ -112,7 +124,7 @@ section .title {
 }
 #header {
     border-bottom: 1px solid #e4e4e4;
-    margin-bottom: 2rem;
+    margin-bottom: var(--two-rem);
     display: flex;
   
     position: fixed;
@@ -128,16 +140,19 @@ section .title {
 }
 
 main{
-    margin-top: calc(var(--header-height) + 2rem);
+    margin-top: calc(var(--header-height) + var(--two-rem));
    }
 /* --------------- LOGO ------------------ */
 .logo {
-    font: 700 1.31rem 'Architects Daughter', sans-serif;
+    font: 700 1.31rem var(--title-font);
     color: var(--title-color);
     letter-spacing: 0.06rem;
 }
 .logo span{
     color: var(--base-color);
+}
+.logo-alt span {
+  color: var(--body-color)
 }
 
 /* ------------- NAVIGATION -------------- */
@@ -218,7 +233,7 @@ nav.show ul li {
 /* -------------Toggle Menu---------------- */
 .toggle {
 color: var(--base-color);
-font-size: 1.5rem;
+font-size: var(--one-half);
 cursor: pointer;
 }
 
@@ -228,7 +243,7 @@ nav .icon-close {
 
     position: absolute;
     top: -1.5rem;
-    right: 1.5rem;
+    right: var(--one-half);
 
     transition: 0.2s;
 }
@@ -236,7 +251,7 @@ nav .icon-close {
 nav.show .icon-close {
     visibility: visible;
     opacity: 1;
-    top: 1.5rem;
+    top: var(--one-half);
 }
 
 /*--------------------------------- HOME --------------------------------- */
@@ -272,17 +287,17 @@ nav.show .icon-close {
 }
 
 #home .text {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: var(--one-half);
+    margin-right: var(--one-half);
     text-align: center;
 }
 
 #home .text h1 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--subtitle-font-size);
   }
   
   #home .text p {
-    margin-bottom: 2rem;
+    margin-bottom: var(--two-rem);
   }
   
   /* -------------------------- ABOUT ------------------------- */
@@ -319,16 +334,16 @@ nav.show .icon-close {
 }
 
 #about .text {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: var(--one-half);
+    margin-right: var(--one-half);
 }
 
 /* ----------SERVICES--------------------- */
 .cards.grid{
-  gap: 1.5rem;
+  gap: var(--one-half);
 }
 .card {
-  padding : 3.65rem 2rem;
+  padding : 3.65rem var(--two-rem);
   box-shadow:  0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
@@ -341,7 +356,7 @@ nav.show .icon-close {
   color: var(--base-color);
 }
 .card title {
-  font-size: 1.5rem;
+  font-size: var(--title-font-size);
   margin-bottom: 0.75rem;
 }
 /* --------- TESTIMONIALS ------------------ */
@@ -355,13 +370,13 @@ nav.show .icon-close {
 }
 
 #testimonials header {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-left: var(--one-half);
+  margin-right: var(--one-half);
   margin-bottom: 0;
 }
 
 #testimonials blockquote {
-  padding: 2rem;
+  padding: var(--two-rem);
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
 }
@@ -369,7 +384,7 @@ nav.show .icon-close {
 #testimonials blockquote p {
   position: relative;
   text-indent: 1.875rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--one-half);
   color: var(--title-color);
 }
 
@@ -388,8 +403,8 @@ nav.show .icon-close {
 }
 
 #testimonials cite img {
-  width: 2rem;
-  height: 2rem;
+  width: var(--two-rem);
+  height: var(--two-rem);
   object-fit: cover;
   clip-path: circle();
   margin-right: 0.5rem;
@@ -417,17 +432,17 @@ nav.show .icon-close {
 }
 
 #contact .text p {
-  margin-bottom: 2rem;
+  margin-bottom: var(--two-rem);
 }
 
 #contact .button i, 
 #contact ul li i {
-  font-size: 1.5rem;
+  font-size: var(--one-half);
   margin-right: 0.625rem;
 }
 
 #contact ul.grid {
-  gap: 2rem;
+  gap: var(--two-rem);
   /* margin-bottom: 5rem; */
 }
 
@@ -438,62 +453,52 @@ nav.show .icon-close {
 
 #contact ul li i {
   color: var(--base-color);
+  transition: 0.3s;
 }
+
 
 /* Footer */
 
-#footer h2 {
-  font: 700 1.31rem 'Architects Daughter', sans-serif;
-    color: var(--title-color);
-    letter-spacing: 0.06rem;
-}
-#footer {
-  background:var(--base-color);
-  
-}
-#footer .text {
-  color: white;
-  margin-right: 8.4rem;
-}
-#footer .title{
-  margin-bottom: 1.5rem;
-}
-
-#footer p {
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  color: --text-color-light;
-  
-} 
-#footer span {
-  color: var(--body-color);
-}
-#footer .title a {
-  color: inherit;
-}
-#footer ul li {
-  display: inline;
-  margin-right: 2.5rem;
-  cursor: pointer;
-  
-
-}
-#footer ul li i {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--text-color-light);
-  font-size: 2rem;
-  transition: ease-in 0.10s;
-}
-#footer .links {
-  margin-bottom: 3rem;
-}
-#footer ul li i:hover {
-  color : rgb(34, 136, 252);
-}
-.back-to-top {
+footer {
   background: var(--base-color);
+  
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: var(--one-half);
+  
+}
+
+footer .brand p {
   color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+ footer .brand {
+   margin-bottom: var(--two-rem)
+ }
+footer i {
+  font-size: var(--one-half);
+  color: var(--text-color-light);
+}
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+footer .social a{
+  transition: 0.3s;
+  display: inline-block;
+  margin-right: 2rem;
+}
+footer .social a:hover {
+  transform: translateY(-8px)
+}
+/* Back to top button */
+.back-to-top { 
+  color: var(--text-color-light);
+  background: rgb(106, 159, 185, 0.81);
+
 
   position: fixed;
   right: 1rem;
@@ -509,10 +514,221 @@ nav.show .icon-close {
   opacity: 0;
 
   transition: 0.3s;
+  transform: translateY(100%)
+}
+.back-to-top:hover {
+  background: rgba(106, 159, 185, 0.88);
 }
 
 .back-to-top.show {
-
   visibility: visible;
   opacity: 1;
+  transform: translateY(0);
 }
+
+
+/* ========== MEDIA QUERIES ===========  */
+
+/* Extra large devices: 1200 > */
+@media (min-width: 1200px) {
+
+
+  /* reusable classes */
+  .section {
+    padding: 10rem 0;
+  }
+  .container {
+    max-width: 92.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button {
+    height: 3.125rem;
+  }
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  /* -------navigation resp */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  nav .menu ul {
+    display: flex;
+    gap : 2rem;
+    
+  }
+  
+  nav .menu ul li a.title {
+    font: 700 var(--title-font-size) var(--title-font);
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+/* layout */
+  main {
+    margin-top: var(--header-height);
+  }
+  /* Home resp */
+
+  #home .container {
+    grid-auto-flow: column;   
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+ /* -------Contact Resp------- */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+  #contact .links {
+    margin-right: 19.31rem;
+  }
+  #contact .text {
+    max-width: 25rem;
+  }
+  /* about resp */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+  #about .image {
+    margin: 0;  
+  }
+   /* Services Resp */
+   .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem ;
+  }
+  /* depoimentos resp */
+
+  #testimonials .container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* footer resp */
+ 
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .container i {
+    gap: 2rem;
+  }
+  footer .logo {
+    font-size: 2.25rem;
+  }
+ 
+  }
+  
+ 
+
+/* Large devices: 1023 > */
+/* Large devices: 992 > 992 pra cima*/ 
+@media (min-width: 992px) {
+ nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  nav .menu ul {
+    display: flex;
+    gap : 2rem;
+    /* margin-right: 2rem; */
+    
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--title-font);
+    
+  }
+  nav .icon-menu {
+    display: none;
+  }
+  .section {
+    padding: 10rem 0;
+  }
+  /* Home resp */
+
+  #home .container {
+    grid-auto-flow: column;   
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+  /* -------Contact Resp-------- */
+  #contact .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+:root {
+  --title-font-size: 2.25rem;
+  --subtitle-font-size: 1.125rem;
+}
+.title {
+  font: 700 var(--title-font-size) var(--title-font);
+  letter-spacing: 0.07rem;
+}
+.subtitle {
+  font-size: var(--subtitle-font-size);
+}
+}
+/* Medium devices: 767 > */
+@media (min-width: 767px) {
+    /* Home resp */
+
+    #home .container {
+      grid-auto-flow: column;   
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  
+    #home .image {
+      order: 1;
+    }
+    #home .text {
+      order: 0;
+      max-width: 24rem;
+      text-align: left;
+    }
+  
+  } 
+
+/* ---------Home Resp---------- */
